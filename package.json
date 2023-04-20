@@ -17,6 +17,7 @@
     ],
     "dependencies": {
       "chalk": "^5.2.0",
+      "jsdom": "^21.1.0",
       "minimist": "^1.2.8"
     }
   }

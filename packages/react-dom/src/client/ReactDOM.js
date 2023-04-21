@@ -1,12 +1,10 @@
 'use strict';
 
-const ReactDOMRoot = require('./ReactDOMRoot');
+import { createRoot as createRootImpl } from './ReactDOMRoot';
 
 function createRoot() {
   console.log('createRoot is called.');
-  ReactDOMRoot.createRoot();
+  createRootImpl();
 }
 
-module.exports = {
-  createRoot: createRoot,
-};
+export { createRoot };

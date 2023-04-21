@@ -1,23 +1,29 @@
 {
-    "author": "kasturada",
-    "devDependencies": {
-      "jest": "^29.5.0",
-      "yarn": "^1.22.19"
-    },
-    "license": "MIT",
-    "private": true,
-    "repository": "git@github.com:katsurada1/react.git",
-    "scripts": {
-      "build": "node ./scripts/rollup/build-all-release-channels.js",
-      "test": "jest"
-    },
-    "version": "1.0.0",
-    "workspaces": [
-      "packages/*"
-    ],
-    "dependencies": {
-      "chalk": "^5.2.0",
-      "jsdom": "^21.1.0",
-      "minimist": "^1.2.8"
-    }
+  "author": "katsurada",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "yarn": "^1.22.19"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": "git@github.com:katsurada1/react.git",
+  "scripts": {
+    "build": "node ./scripts/rollup/build-all-release-channels.js",
+    "test": "jest"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.0",
+    "chalk": "^5.2.0",
+    "jsdom": "^21.1.0",
+    "minimist": "^1.2.8"
   }
+}

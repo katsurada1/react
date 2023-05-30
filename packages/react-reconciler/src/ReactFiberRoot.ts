@@ -12,6 +12,7 @@ function FiberRootNode(containerInfo) {
 export function createFiberRoot(containerInfo, tag: RootTag): FiberRoot {
   const root: FiberRoot = new FiberRootNode(containerInfo);
   const uninitializedFiber = createHostRootFiber(tag);
+  root.current = uninitializedFiber;
   initializeUpdateQueue(uninitializedFiber);
 
   return root;

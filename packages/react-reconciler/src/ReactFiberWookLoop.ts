@@ -1,25 +1,30 @@
 import { Fiber } from './ReactInternalTypes';
-// import { Lane } from './ReactFiberLane';
+import { ConcurrentMode, NoMode } from './ReactTypeOfMode';
+import { Lane, SyncLane } from './ReactFiberLane';
 
-export function requestUpdateLane(fiber: Fiber) {
+export function requestUpdateLane(fiber: Fiber): Lane {
   // Special cases
   const mode = fiber.mode;
-  // if ((mode & ConcurrentMode) === NoMode) {
-  //   return (SyncLane: Lane);
-  // } else if (
+  if ((mode & ConcurrentMode) === NoMode) {
+    return SyncLane;
+  }
+
+  console.log('Here');
+  return SyncLane;
+  // else if (
   //   !deferRenderPhaseUpdateToNextBatch &&
   //   (executionContext & RenderContext) !== NoContext &&
   //   workInProgressRootRenderLanes !== NoLanes
   // ) {
-  //   // This is a render phase update. These are not officially supported. The
-  //   // old behavior is to give this the same "thread" (lanes) as
-  //   // whatever is currently rendering. So if you call `setState` on a component
-  //   // that happens later in the same render, it will flush. Ideally, we want to
-  //   // remove the special case and treat them as if they came from an
-  //   // interleaved event. Regardless, this pattern is not officially supported.
-  //   // This behavior is only a fallback. The flag only exists until we can roll
-  //   // out the setState warning, since existing code might accidentally rely on
-  //   // the current behavior.
+  // This is a render phase update. These are not officially supported. The
+  // old behavior is to give this the same "thread" (lanes) as
+  // whatever is currently rendering. So if you call `setState` on a component
+  // that happens later in the same render, it will flush. Ideally, we want to
+  // remove the special case and treat them as if they came from an
+  // interleaved event. Regardless, this pattern is not officially supported.
+  // This behavior is only a fallback. The flag only exists until we can roll
+  // out the setState warning, since existing code might accidentally rely on
+  // the current behavior.
   //   return pickArbitraryLane(workInProgressRootRenderLanes);
   // }
 

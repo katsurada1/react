@@ -18,6 +18,8 @@ export type Fiber = {
 type BaseFiberRootProperties = {
   // Any additional information from the host associated with this root.
   containerInfo: any;
+  // The currently active root fiber. This is the mutable root of the tree.
+  current: Fiber;
 };
 
 export type FiberRoot = BaseFiberRootProperties;

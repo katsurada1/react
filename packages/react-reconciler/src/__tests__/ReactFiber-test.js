@@ -2,7 +2,6 @@
 
 import { JSDOM } from 'jsdom';
 import { createContainer } from 'react-reconciler/src/ReactFiberReconciler';
-import { createFiberRoot } from '../ReactFiberRoot';
 import { ConcurrentRoot } from '../ReactRootTags';
 
 test('Dummy FiberRootNode', () => {

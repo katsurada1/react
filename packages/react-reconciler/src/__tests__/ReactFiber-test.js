@@ -3,6 +3,7 @@
 import { JSDOM } from 'jsdom';
 import { createContainer } from 'react-reconciler/src/ReactFiberReconciler';
 import { createFiberRoot } from '../ReactFiberRoot';
+import { ConcurrentRoot } from '../ReactRootTags';
 
 test('Dummy FiberRootNode', () => {
   const dom = new JSDOM(
@@ -11,6 +12,5 @@ test('Dummy FiberRootNode', () => {
   global.document = dom.window.document;
 
   const rootContainer = document.getElementById('root');
-  const root = createContainer(rootContainer);
-  const fiberRoot = createFiberRoot(root);
+  const root = createContainer(rootContainer, ConcurrentRoot);
 });

@@ -1,7 +1,6 @@
 'use strict';
 
-class FiberRootNode {}
-
-module.exports = {
-  FiberRootNode,
+export type Fiber = {
+  // A queue of state updates and callbacks.
+  updateQueue: any,
 };

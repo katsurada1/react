@@ -1,3 +1,7 @@
+/**
+ * @flow
+ */
+
 import { Container } from './ReactDOMHostConfig';
 import { Fiber } from 'react-reconciler/src/ReactInternalTypes';
 

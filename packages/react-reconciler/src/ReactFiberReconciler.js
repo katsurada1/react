@@ -1,3 +1,6 @@
+/**
+ * @flow
+ */
 'use strict';
 
 import { createFiberRoot } from './ReactFiberRoot';

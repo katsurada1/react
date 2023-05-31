@@ -2,9 +2,8 @@
 
 import { createRoot as createRootImpl } from './ReactDOMRoot';
 
-function createRoot() {
-  console.log('createRoot is called.');
-  createRootImpl();
+function createRoot(container) {
+  createRootImpl(container);
 }
 
 export { createRoot };

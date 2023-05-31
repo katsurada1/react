@@ -6,6 +6,7 @@
   "jest": {
     "moduleNameMapper": {
         "^react-dom$": "<rootDir>/packages/react-dom",
+        "^react-dom-bindings$": "<rootDir>/packages/react-dom-bindings",
         "^react-reconciler$": "<rootDir>/packages/react-reconciler"
     }
   },

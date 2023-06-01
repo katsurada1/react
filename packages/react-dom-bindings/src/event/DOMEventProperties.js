@@ -1,7 +1,6 @@
 /**
  * @flow
  */
-
 import type { DOMEventName } from './DOMEventNames';
 import {
   ANIMATION_END,
@@ -9,6 +8,7 @@ import {
   ANIMATION_START,
   TRANSITION_END,
 } from './DOMEventNames';
+import { registerTwoPhaseEvent } from './EventRegistry';
 
 export const topLevelEventsToReactNames: Map<DOMEventName, string | null> =
   new Map();
@@ -86,7 +86,7 @@ const simpleEventPluginEvents = [
 
 function registerSimpleEvent(domEventName: DOMEventName, reactName: string) {
   topLevelEventsToReactNames.set(domEventName, reactName);
-  // registerTwoPhaseEvent(reactName, [domEventName]);
+  registerTwoPhaseEvent(reactName, [domEventName]);
 }
 
 export function registerSimpleEvents() {

@@ -417,4 +417,8 @@ function cancelHostTimeout() {
   taskTimeoutID = ((-1: any): TimeoutID);
 }
 
-export { unstable_scheduleCallback };
+function unstable_getCurrentPriorityLevel(): PriorityLevel {
+  return currentPriorityLevel;
+}
+
+export { unstable_getCurrentPriorityLevel, unstable_scheduleCallback };

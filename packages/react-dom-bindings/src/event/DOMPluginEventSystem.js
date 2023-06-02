@@ -206,3 +206,22 @@ addTrappedEventListener(
     }
   }
 }
+
+export function dispatchEventForPluginEventSystem(
+  domEventName: DOMEventName,
+  eventSystemFlags: EventSystemFlags,
+  nativeEvent: AnyNativeEvent,
+  targetInst: null | Fiber,
+  targetContainer: EventTarget,
+): void {
+  
+  batchedUpdates(() =>
+    dispatchEventsForPlugins(
+      domEventName,
+      eventSystemFlags,
+      nativeEvent,
+      ancestorInst,
+      targetContainer,
+    ),
+  );
+}

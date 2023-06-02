@@ -20,9 +20,9 @@ function FiberNode(this: $FlowFixMe, mode: TypeOfMode, tag: WorkTag) {
   this.flags = NoFlags;
 }
 
-function createFiber(mode: TypeOfMode): Fiber {
+function createFiber(mode: TypeOfMode, tag: WorkTag): Fiber {
   // $FlowFixMe: the shapes are exact here but Flow doesn't like constructors
-  return new FiberNode(mode);
+  return new FiberNode(mode, tag);
 }
 
 export function createHostRootFiber(tag: RootTag) {
@@ -36,5 +36,5 @@ export function createHostRootFiber(tag: RootTag) {
     mode = NoMode;
   }
 
-  return createFiber(mode);
+  return createFiber(mode, tag);
 }
